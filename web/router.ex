@@ -18,8 +18,12 @@ defmodule ChiChan.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", ChiChan do
-  #   pipe_through :api
-  # end
+  scope "/api", ChiChan do
+    pipe_through :api
+
+    get "/photos/random", PhotoController, :random
+
+    # uncomment this only while mainntenance
+    # resources "/photos", PhotoController
+  end
 end
