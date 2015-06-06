@@ -12,12 +12,6 @@ defmodule ChiChan.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ChiChan do
-    pipe_through :browser # Use the default browser stack
-
-    get "/", PageController, :index
-  end
-
   scope "/api", ChiChan do
     pipe_through :api
 
