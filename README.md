@@ -1,8 +1,8 @@
-# ChiChan
+# ChiChanBotBackend
 
-To start your new Phoenix application:
+## Running
 
-1. Install dependencies with `mix deps.get`
-2. Start Phoenix endpoint with `mix phoenix.server`
+```
+MIX_ENV=prod PORT=4001 elixir --detached -S mix phoenix.server
+```
 
-Now you can visit `localhost:4000` from your browser.
