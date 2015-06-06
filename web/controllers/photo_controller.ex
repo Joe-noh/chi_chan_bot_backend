@@ -31,7 +31,7 @@ defmodule ChiChan.PhotoController do
 
   def random(conn, _) do
     photo = (from p in Photo, order_by: fragment("RANDOM()"), limit: 1) |> Repo.one
-    render conn, "show.json", photo: photo
+    render conn, "photo.json", photo: photo
   end
 
   def update(conn, %{"id" => id, "photo" => photo_params}) do
