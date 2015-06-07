@@ -4,6 +4,7 @@ defmodule ChiChan.PhotoController do
   alias ChiChan.Photo
 
   plug :scrub_params, "photo" when action in [:create, :update]
+  plug ChiChan.Authenticate when action in [:create]
   plug :action
 
   def index(conn, _params) do

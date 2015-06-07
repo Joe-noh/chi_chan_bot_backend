@@ -17,7 +17,6 @@ defmodule ChiChan.Router do
 
     get "/photos/random", PhotoController, :random
 
-    # uncomment this only while mainntenance
-    # resources "/photos", PhotoController
+    resources "/photos", PhotoController, only: [:create]
   end
 end
