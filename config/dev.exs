@@ -7,7 +7,7 @@ use Mix.Config
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
 config :chi_chan, ChiChan.Endpoint,
-  http: [port: 4001],
+  http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
   cache_static_lookup: false,
@@ -33,3 +33,6 @@ config :chi_chan, ChiChan.Repo,
   password: "postgres",
   database: "chi_chan_dev",
   size: 10 # The amount of database connections in the pool
+
+config :chi_chan, ChiChan.Authenticate,
+  password: "dev"
