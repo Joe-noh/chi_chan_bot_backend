@@ -13,7 +13,7 @@ defmodule ChiChan.Photo do
   end
 
   @required_fields ~w(url)
-  @optional_fields ~w(comment, :subject)
+  @optional_fields ~w(comment subject)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
