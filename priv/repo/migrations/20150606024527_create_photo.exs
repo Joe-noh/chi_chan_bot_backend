@@ -8,6 +8,5 @@ defmodule ChiChan.Repo.Migrations.CreatePhoto do
 
       timestamps
     end
-
   end
 end
