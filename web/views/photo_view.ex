@@ -10,6 +10,6 @@ defmodule ChiChan.PhotoView do
   end
 
   def render("photo.json", %{photo: photo}) do
-    %{url: photo.url, comment: photo.comment}
+    %{url: photo.url, comment: photo.comment, subject: photo.subject}
   end
 end

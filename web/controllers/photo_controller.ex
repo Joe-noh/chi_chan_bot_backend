@@ -17,7 +17,7 @@ defmodule ChiChan.PhotoController do
 
     if changeset.valid? do
       photo = Repo.insert(changeset)
-      render(conn, "show.json", photo: photo)
+      render(conn, "photo.json", photo: photo)
     else
       conn
       |> put_status(:unprocessable_entity)
@@ -30,8 +30,13 @@ defmodule ChiChan.PhotoController do
     render conn, "show.json", photo: photo
   end
 
+  def random(conn, %{"subject" => subject}) do
+    photo = Photo.random(subject)
+    render conn, "photo.json", photo: photo
+  end
+
   def random(conn, _) do
-    photo = (from p in Photo, order_by: fragment("RANDOM()"), limit: 1) |> Repo.one
+    photo = Photo.random
     render conn, "photo.json", photo: photo
   end
 
@@ -41,7 +46,7 @@ defmodule ChiChan.PhotoController do
 
     if changeset.valid? do
       photo = Repo.update(changeset)
-      render(conn, "show.json", photo: photo)
+      render(conn, "photo.json", photo: photo)
     else
       conn
       |> put_status(:unprocessable_entity)
@@ -53,6 +58,6 @@ defmodule ChiChan.PhotoController do
     photo = Repo.get(Photo, id)
 
     photo = Repo.delete(photo)
-    render(conn, "show.json", photo: photo)
+    render(conn, "photo.json", photo: photo)
   end
 end
