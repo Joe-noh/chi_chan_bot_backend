@@ -15,4 +15,8 @@ config :chi_chan, ChiChan.Repo,
   username: "postgres",
   password: "postgres",
   database: "chi_chan_test",
-  size: 1 # Use a single connection for transactional tests
+  size: 1, # Use a single connection for transactional tests
+  pool: Ecto.Adapters.SQL.Sandbox
+
+config :chi_chan, ChiChan.Authenticate,
+  password: "password_for_testing"
