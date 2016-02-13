@@ -31,5 +31,5 @@ defmodule ChiChan.Endpoint do
     key: "_chi_chan_key",
     signing_salt: "I6mso5vm"
 
-  plug :router, ChiChan.Router
+  plug ChiChan.Router
 end
